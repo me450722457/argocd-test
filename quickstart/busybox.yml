@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       name: busybox
-  templates:
+  template:
     metadata:
       labels:
         name: busybox
