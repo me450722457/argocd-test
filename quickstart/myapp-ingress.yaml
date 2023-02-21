@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: null
+  name: myapp-ingress
+spec:
+  rules:
+  - host: myapp.example.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: myapp
+            port:
+              number: 32060
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer: {}
