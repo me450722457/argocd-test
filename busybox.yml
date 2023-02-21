@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: busybox
+  namespace: kube-system
+  labels:
+    k8s-app: busybox
+spec:
+  templates:
+    containers:
+    - name: busybox
+      image: busybox:latest
+      command:
+        - sleep
+        - "infinity"
+      imagePullPolicy: IfNotPresent
+  restartPolicy: Always
