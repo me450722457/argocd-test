@@ -12,7 +12,7 @@ spec:
           service:
             name: myapp
             port:
-              number: 32060
+              number: 80
         path: /
         pathType: Prefix
 status:
