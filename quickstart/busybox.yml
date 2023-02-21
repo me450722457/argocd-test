@@ -4,12 +4,18 @@ metadata:
   name: busybox
   namespace: default
 spec:
+  selector:
+    matchLabels:
+      name: busybox
   templates:
-    containers:
-    - name: busybox
-      image: busybox:latest
-      command:
-        - sleep
-        - "infinity"
-      imagePullPolicy: IfNotPresent
-  restartPolicy: Always
+    metadata:
+      labels:
+        name: busybox
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:latest
+        command:
+          - sleep
+          - "infinity"
+        imagePullPolicy: IfNotPresent
